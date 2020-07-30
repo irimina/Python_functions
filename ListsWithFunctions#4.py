@@ -176,14 +176,14 @@ def menu():
   1: Add a task
   2: View list
   3: Exit
-  """).strip()
+  """)
 
   return mode
 
 # Function that allows user to add a task to their to do list
 def add_tasks():
   while True:
-    new_task = input("Enter the task to add or type 'end' to return to menu:").strip().lower()
+    new_task = input("Enter the task to add or type 'end' to return to menu:")
     if new_task == "end":
       break
     else:
@@ -192,13 +192,14 @@ def add_tasks():
 # Function that shows current tasks in the To Do List
 def view_list():
   for task in todo_list:
-    print("- {}".format(task))
+    print(task)
 
 # Create an empty list to store the tasks
 todo_list = []
 
 # Run the main program in a loop.
-while True:
+repeat=True
+while repeat:
   chosen_option = menu()
 
   if chosen_option == "1":
@@ -207,6 +208,69 @@ while True:
     print("Here is your To Do List:")
     view_list()
   elif chosen_option == "3":
-    break
+    repeat=False
   else:
     print("That wasn't an option, please try again")
+    
+ 
+############################################################################################
+
+# Final Touches 
+'''
+Final touches
+For the final touches on our To Do List, 
+let's make it tell the user if there are no tasks yet, and say goodbye when they quit.
+
+View List Function: In the view_list() function, wrap the for loop in an if statement that checks if the length of todo_list is greater than 0.
+Add an else branch, for if the length IS 0, that prints You have no tasks yet!
+Just for good measure, at the very end of the program outside of the loop, print Goodbye!
+'''
+
+def menu():
+  print(" ")
+  mode = input("""Choose a mode by entering the number:
+  1: Add a task
+  2: View list
+  3: Exit
+  """)
+  return mode
+
+# Function that allows user to add a task to their to do list
+def add_tasks():
+  while True:
+    new_task = input("Enter the task to add or type 'end' to return to menu:")
+    if new_task == "end":
+      break
+    else:
+      todo_list.append(new_task)
+      
+# Function that shows current tasks in the To Do List
+def view_list():
+  if len(todo_list)>0:
+    for task in todo_list:
+      print(task)
+  else:
+    print("You have no tasks")
+
+# Create an empty list to store the tasks
+todo_list = []
+
+# Run the main program in a loop.
+repeat=True
+while repeat:
+  chosen_option = menu()
+
+  if chosen_option == "1":
+    add_tasks() 
+  elif chosen_option == "2":
+    print("Here is your To Do List:")
+    view_list()
+  elif chosen_option == "3":
+    repeat=False
+  else:
+    print("That wasn't an option, please try again")
+print("Goodbye")
+############################################################################################
+
+
+
