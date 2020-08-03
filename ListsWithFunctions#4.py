@@ -1,4 +1,3 @@
-
 # using lists with functions
 # To Do List type program, where we can view our list or add items.
 
@@ -155,12 +154,9 @@ while repeat:
 
 
 
-# FInal Draft
-
-
 
 ############################################################################################
-# same program
+# FInal Draft, same program - TODO LIST
 '''
 Make the program more user-friendly
 Cool, so our program works, but if you have a bunch of tasks to add, you have to keep pressing 1 to add them one at a time. 
